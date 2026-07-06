@@ -32,8 +32,8 @@ const faqs = [
     a: "Le simulateur couvre tous les statuts micro-entrepreneur : BIC Vente, BIC Prestations de services, BNC Libérale (réglementée et non réglementée), et Agent commercial.",
   },
   {
-    q: "Des vidéos tuto sont-elles incluses ?",
-    a: "Oui, chaque outil est accompagné d'une vidéo walkthrough de 5-10 minutes qui vous montre pas à pas comment le configurer et l'utiliser. Le lien est envoyé avec votre fichier après achat.",
+    q: "Ai-je besoin de connaissances en comptabilité ?",
+    a: "Non, les outils Fino sont conçus pour les non-comptables. Le Guide Premium vous accompagne pas à pas dans chaque étape, avec des exemples concrets et un glossaire complet.",
   },
 ];
 

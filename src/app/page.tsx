@@ -35,9 +35,9 @@ const features = [
     desc: "Pensé par et pour les micro-entrepreneurs et freelances.",
   },
   {
-    icon: "🎬",
-    title: "Vidéos tuto incluses",
-    desc: "Un walkthrough vidéo pour chaque outil, pas besoin de deviner.",
+    icon: "💬",
+    title: "Support réactif",
+    desc: "Une question ? Notre équipe vous répond sous 24h par email.",
   },
 ];
 

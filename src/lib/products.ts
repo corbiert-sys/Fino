@@ -15,7 +15,6 @@ export interface Product {
   type: ProductType;
   fileName: string;
   bundleProductIds?: string[];
-  videoId?: string;
   interval?: "month";
 }
 
@@ -36,7 +35,6 @@ export const products: Product[] = [
       "Kit Passage à la TVA 2026 + Calculateur de seuil",
       "Espace Pré-Compta Notion avec automatisations",
       "Économie de 35% vs achat séparé",
-      "Vidéos tuto incluses pour chaque outil",
       "Mises à jour gratuites à vie",
       "Support prioritaire par email",
     ],
@@ -70,13 +68,11 @@ export const products: Product[] = [
       "Graphique de progression mensuel",
       "Taux mis à jour automatiquement 2025/2026",
       "Plus de 500 lignes de saisie",
-      "Vidéo tuto de prise en main incluse",
     ],
     icon: "📊",
     badge: "Best-seller",
     type: "one-time",
     fileName: "Fino_Simulateur_Tresorerie_Charges.xlsx",
-    videoId: "simulateur-demo",
   },
   {
     id: "guide-premium",
@@ -84,23 +80,22 @@ export const products: Product[] = [
     shortName: "Guide Premium",
     price: 1900,
     description:
-      "Le mode d'emploi complet avec vidéos tuto pour exploiter 100% du potentiel de votre simulateur.",
+      "Le mode d'emploi complet pour exploiter 100% du potentiel de votre simulateur. Astuces, méthodes et bonnes pratiques.",
     longDescription:
-      "Ce guide détaillé vous accompagne pas à pas dans l'utilisation du Simulateur de Trésorerie Fino. De la configuration initiale à l'analyse avancée de votre tableau de bord, découvrez toutes les fonctionnalités et les meilleures pratiques. Inclut des vidéos walkthrough pour chaque étape clé.",
+      "Ce guide détaillé vous accompagne pas à pas dans l'utilisation du Simulateur de Trésorerie Fino. De la configuration initiale à l'analyse avancée de votre tableau de bord, découvrez toutes les fonctionnalités et les meilleures pratiques pour piloter votre activité avec clarté.",
     features: [
       "Configuration pas à pas de votre statut",
       "Méthode des 3 comptes pour vos provisions",
       "Guide de saisie avec exemples concrets",
       "Lecture et interprétation du tableau de bord",
       "Calendrier des paiements URSSAF",
-      "Vidéos tuto pas à pas incluses",
       "FAQ complète avec solutions",
+      "Glossaire des termes financiers",
       "Conseils d'experts-comptables",
     ],
     icon: "📖",
     type: "one-time",
     fileName: "Fino_Guide_Simulateur_Premium.pdf",
-    videoId: "guide-demo",
   },
   {
     id: "kit-tva-2026",
@@ -119,13 +114,12 @@ export const products: Product[] = [
       "Comparatif Réel Simplifié vs Réel Normal",
       "Scripts email B2B et B2C prêts à l'emploi",
       "Guide de récupération de TVA sur achats",
-      "Vidéo tuto de transition incluse",
+      "Feuille de route complète",
     ],
     icon: "🏛️",
     badge: "Nouveau",
     type: "one-time",
     fileName: "Fino_Kit_TVA_2026.pdf",
-    videoId: "tva-demo",
   },
   {
     id: "espace-notion-precompta",
@@ -144,12 +138,11 @@ export const products: Product[] = [
       "Suivi des factures, devis et clients",
       "Calendrier fiscal interactif",
       "Tableau de bord visuel de votre activité",
-      "Vidéo tuto de configuration incluse",
+      "Mises à jour incluses",
     ],
     icon: "💼",
     type: "one-time",
     fileName: "Fino_Espace_PreCompta_Notion.pdf",
-    videoId: "notion-demo",
   },
   {
     id: "club-fino",

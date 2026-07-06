@@ -181,36 +181,6 @@ export default async function ProductPage({
             </div>
           </div>
 
-          {/* Video section */}
-          {product.videoId && (
-            <div className="mt-16 sm:mt-24">
-              <h2 className="text-2xl font-extrabold text-[#0F2B46] mb-6">
-                Voir l&apos;outil en action
-              </h2>
-              <div className="bg-gradient-to-br from-[#0F2B46] to-[#1a3d5c] rounded-2xl p-8 sm:p-12 text-center">
-                <div className="max-w-lg mx-auto">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-white/10 rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-8 h-8 text-[#00C853]"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <p className="text-white font-semibold text-lg mb-2">
-                    Vidéo tuto incluse avec votre achat
-                  </p>
-                  <p className="text-gray-400 text-sm">
-                    Un walkthrough complet pour prendre en main l&apos;outil en
-                    quelques minutes. Le lien de la vidéo est envoyé avec votre
-                    fichier après achat.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-
           {/* Features list */}
           <div className="mt-16 sm:mt-24">
             <h2 className="text-2xl font-extrabold text-[#0F2B46] mb-8">
