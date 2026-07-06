@@ -49,6 +49,9 @@ export async function POST(request: NextRequest) {
       success_url: `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/produits/${product.id}`,
       locale: "fr",
+      metadata: {
+        productId: product.id,
+      },
     });
 
     return NextResponse.json({ url: session.url });

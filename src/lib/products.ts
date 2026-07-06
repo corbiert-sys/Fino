@@ -9,7 +9,9 @@ export interface Product {
   icon: string;
   badge?: string;
   popular?: boolean;
+  fileName: string;
 }
+
 
 export const products: Product[] = [
   {
@@ -34,6 +36,7 @@ export const products: Product[] = [
     icon: "📊",
     badge: "Best-seller",
     popular: true,
+    fileName: "Fino_Simulateur_Tresorerie_Charges.xlsx",
   },
   {
     id: "guide-premium",
@@ -55,6 +58,7 @@ export const products: Product[] = [
       "Conseils d'experts-comptables",
     ],
     icon: "📖",
+    fileName: "Fino_Guide_Simulateur_Premium.pdf",
   },
   {
     id: "kit-tva-2026",
@@ -77,6 +81,7 @@ export const products: Product[] = [
     ],
     icon: "🏛️",
     badge: "Nouveau",
+    fileName: "Fino_Kit_TVA_2026.pdf",
   },
   {
     id: "espace-notion-precompta",
@@ -98,6 +103,7 @@ export const products: Product[] = [
       "Mises à jour incluses",
     ],
     icon: "💼",
+    fileName: "Fino_Espace_PreCompta_Notion.pdf",
   },
 ];
 
