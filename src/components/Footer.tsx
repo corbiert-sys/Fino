@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Logo className="h-8 w-auto [&_rect:first-child]:fill-white [&_text]:fill-white" />
             <p className="mt-4 text-gray-300 text-sm leading-relaxed max-w-md">
-              Fino — Finance Solo. Les outils essentiels pour piloter votre
+              Mon Fino — Finance Solo. Les outils essentiels pour piloter votre
               micro-entreprise avec clarté et sérénité.
             </p>
           </div>
@@ -59,14 +59,6 @@ export function Footer() {
                   Espace Notion
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/produits/club-fino"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
-                >
-                  Club Fino (abonnement)
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -105,7 +97,7 @@ export function Footer() {
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Fino — Finance Solo. Tous droits
+            &copy; {new Date().getFullYear()} Mon Fino — Finance Solo. Tous droits
             réservés.
           </p>
           <p className="text-xs text-gray-500">

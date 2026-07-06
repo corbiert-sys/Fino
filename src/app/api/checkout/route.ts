@@ -30,33 +30,6 @@ export async function POST(request: NextRequest) {
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
-    if (product.type === "subscription") {
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
-        line_items: [
-          {
-            price_data: {
-              currency: "eur",
-              product_data: {
-                name: product.name,
-                description: product.description,
-              },
-              unit_amount: product.price,
-              recurring: { interval: "month" },
-            },
-            quantity: 1,
-          },
-        ],
-        mode: "subscription",
-        success_url: `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${siteUrl}/produits/${product.id}`,
-        locale: "fr",
-        metadata: { productId: product.id },
-      });
-
-      return NextResponse.json({ url: session.url });
-    }
-
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: [

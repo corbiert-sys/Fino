@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales de Vente — Fino",
+  title: "Conditions Générales de Vente — Mon Fino",
 };
 
 export default function CGV() {
@@ -17,7 +17,7 @@ export default function CGV() {
         </h2>
         <p className="text-gray-600">
           Les présentes CGV régissent la vente de produits numériques (fichiers
-          Excel, guides PDF, templates Notion) proposés par Fino sur ce site.
+          Google Sheets, guides PDF, templates Notion) proposés par Mon Fino sur ce site.
         </p>
 
         <h2 className="text-lg font-bold text-[#0F2B46] mt-8">
@@ -34,7 +34,7 @@ export default function CGV() {
           Article 3 — Prix
         </h2>
         <p className="text-gray-600">
-          Les prix sont indiqués en euros TTC. Fino se réserve le droit de
+          Les prix sont indiqués en euros TTC. Mon Fino se réserve le droit de
           modifier ses prix à tout moment, sans que cela n&apos;affecte les
           commandes déjà confirmées.
         </p>
@@ -64,7 +64,7 @@ export default function CGV() {
           Conformément à l&apos;article L221-28 du Code de la consommation, le
           droit de rétractation ne peut être exercé pour les contenus numériques
           fournis sur un support immatériel dont l&apos;exécution a commencé avec
-          l&apos;accord du consommateur. Toutefois, Fino offre une garantie
+          l&apos;accord du consommateur. Toutefois, Mon Fino offre une garantie
           satisfait ou remboursé de 14 jours sur simple demande par email.
         </p>
 
@@ -81,7 +81,7 @@ export default function CGV() {
           Article 8 — Responsabilité
         </h2>
         <p className="text-gray-600">
-          Les outils Fino sont fournis à titre indicatif. Fino ne saurait être
+          Les outils Mon Fino sont fournis à titre indicatif. Mon Fino ne saurait être
           tenu responsable des décisions financières prises sur la base de ces
           outils. Il est recommandé de consulter un expert-comptable pour toute
           obligation déclarative officielle.

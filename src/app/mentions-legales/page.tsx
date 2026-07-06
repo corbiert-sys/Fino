@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Fino",
+  title: "Mentions légales — Mon Fino",
 };
 
 export default function MentionsLegales() {
@@ -14,7 +14,7 @@ export default function MentionsLegales() {
 
         <h2 className="text-lg font-bold text-[#0F2B46] mt-8">Éditeur</h2>
         <p className="text-gray-600">
-          Fino — Finance Solo
+          Mon Fino — Finance Solo
           <br />
           [Votre nom / raison sociale]
           <br />
@@ -36,7 +36,7 @@ export default function MentionsLegales() {
         </h2>
         <p className="text-gray-600">
           L&apos;ensemble des contenus présents sur ce site (textes, images,
-          outils, fichiers) sont la propriété exclusive de Fino et sont protégés
+          outils, fichiers) sont la propriété exclusive de Mon Fino et sont protégés
           par le droit d&apos;auteur. Toute reproduction est interdite sans
           autorisation préalable.
         </p>
@@ -56,7 +56,7 @@ export default function MentionsLegales() {
           Avertissement
         </h2>
         <p className="text-gray-600">
-          Les outils Fino sont fournis à titre indicatif et constituent une aide
+          Les outils Mon Fino sont fournis à titre indicatif et constituent une aide
           à la décision. Ils ne se substituent pas aux conseils d&apos;un
           expert-comptable. Les taux affichés sont ceux en vigueur au moment de
           la publication.

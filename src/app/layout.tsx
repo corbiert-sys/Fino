@@ -10,7 +10,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Fino — Finance Solo | Outils pour micro-entrepreneurs",
+  title: "Mon Fino — Finance Solo | Outils pour micro-entrepreneurs",
   description:
     "Simulateur de trésorerie, guides et outils pour piloter votre micro-entreprise avec clarté. Conçus pour les auto-entrepreneurs et freelances.",
   keywords: [

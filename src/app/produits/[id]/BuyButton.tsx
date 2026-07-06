@@ -5,11 +5,9 @@ import { useState } from "react";
 export function BuyButton({
   productId,
   productName,
-  isSubscription,
 }: {
   productId: string;
   productName: string;
-  isSubscription?: boolean;
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -35,10 +33,6 @@ export function BuyButton({
       setLoading(false);
     }
   }
-
-  const label = isSubscription
-    ? `S'abonner au ${productName}`
-    : `Acheter ${productName}`;
 
   return (
     <button
@@ -71,7 +65,7 @@ export function BuyButton({
         </>
       ) : (
         <>
-          {label}
+          Acheter {productName}
           <svg
             className="w-5 h-5 ml-2"
             fill="none"

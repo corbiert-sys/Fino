@@ -5,15 +5,11 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Quelle est la différence entre le Pack et les outils à l'unité ?",
-    a: "Le Pack Lancement contient les 4 outils Fino au complet avec 35% de réduction. Si vous démarrez votre activité, c'est l'option la plus avantageuse. Vous pouvez aussi acheter chaque outil séparément selon vos besoins.",
-  },
-  {
-    q: "Comment fonctionne le Club Fino ?",
-    a: "Le Club Fino est un abonnement mensuel à 7,90 €/mois qui vous donne accès à tous les outils, avec mises à jour automatiques des taux, alertes fiscales et support prioritaire. Sans engagement, résiliable à tout moment depuis votre espace Stripe.",
+    a: "Le Pack Lancement contient les 4 outils Mon Fino au complet avec 35 % de réduction. Si vous démarrez votre activité, c'est l'option la plus avantageuse. Vous pouvez aussi acheter chaque outil séparément selon vos besoins.",
   },
   {
     q: "Comment fonctionne le paiement et la livraison ?",
-    a: "Le paiement est sécurisé via Stripe (carte bancaire, Apple Pay, Google Pay). Après votre achat, vous recevez automatiquement un email avec votre lien de téléchargement et la vidéo tuto en quelques secondes.",
+    a: "Le paiement est sécurisé via Stripe (carte bancaire, Apple Pay, Google Pay). Après votre achat, vous recevez automatiquement un email avec votre lien de téléchargement personnel en quelques secondes.",
   },
   {
     q: "Le Simulateur est-il sur Google Sheets ou Excel ?",
@@ -33,7 +29,7 @@ const faqs = [
   },
   {
     q: "Ai-je besoin de connaissances en comptabilité ?",
-    a: "Non, les outils Fino sont conçus pour les non-comptables. Le Guide Premium vous accompagne pas à pas dans chaque étape, avec des exemples concrets et un glossaire complet.",
+    a: "Non, les outils Mon Fino sont conçus pour les non-comptables. Le Guide Premium vous accompagne pas à pas dans chaque étape, avec des exemples concrets et un glossaire complet.",
   },
 ];
 

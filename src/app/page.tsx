@@ -1,7 +1,6 @@
 import {
   singleProducts,
   bundleProduct,
-  subscriptionProduct,
   formatPrice,
 } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
@@ -12,32 +11,32 @@ const features = [
   {
     icon: "⚡",
     title: "Prêt à l'emploi",
-    desc: "Téléchargez, ouvrez, saisissez. Aucune configuration complexe.",
+    desc: "Téléchargez, ouvrez, saisissez. Aucune configuration complexe requise.",
   },
   {
     icon: "🔒",
     title: "Paiement sécurisé",
-    desc: "Transactions chiffrées via Stripe. Vos données sont protégées.",
+    desc: "Transactions chiffrées via Stripe. Vos données bancaires ne transitent jamais par nos serveurs.",
   },
   {
     icon: "📱",
     title: "Livraison instantanée",
-    desc: "Accès immédiat après achat. Lien de téléchargement par email.",
+    desc: "Accès immédiat après achat. Lien de téléchargement personnel envoyé par email en quelques secondes.",
   },
   {
     icon: "🔄",
     title: "Taux à jour 2025/2026",
-    desc: "URSSAF, TVA, VFL — tous les taux officiels intégrés.",
+    desc: "URSSAF, TVA, VFL — tous les taux officiels intégrés et mis à jour automatiquement.",
   },
   {
     icon: "🎯",
     title: "Conçu pour vous",
-    desc: "Pensé par et pour les micro-entrepreneurs et freelances.",
+    desc: "Pensé par et pour les micro-entrepreneurs, auto-entrepreneurs et freelances.",
   },
   {
     icon: "💬",
     title: "Support réactif",
-    desc: "Une question ? Notre équipe vous répond sous 24h par email.",
+    desc: "Une question ? Notre équipe vous répond sous 24 h par email, 7j/7.",
   },
 ];
 
@@ -233,72 +232,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Club Fino — Subscription */}
-      <section id="club" className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-to-br from-[#0F2B46] to-[#1a3d5c] rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00C853] rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/3" />
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00C853]/20 rounded-full text-xs font-bold text-[#00C853] mb-4">
-                  ABONNEMENT
-                </div>
-                <div className="text-5xl mb-4">{subscriptionProduct.icon}</div>
-                <h2 className="text-3xl font-extrabold mb-3">
-                  {subscriptionProduct.name}
-                </h2>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  {subscriptionProduct.description}
-                </p>
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-4xl font-extrabold">
-                    {formatPrice(subscriptionProduct.price)}
-                  </span>
-                  <span className="text-gray-400">/mois</span>
-                </div>
-                <Link
-                  href={`/produits/${subscriptionProduct.id}`}
-                  className="inline-flex items-center justify-center px-10 py-4 text-base font-bold bg-[#00C853] hover:bg-[#00B848] text-white rounded-full transition-all shadow-lg shadow-[#00C853]/30"
-                >
-                  Rejoindre le Club
-                </Link>
-              </div>
-              <div>
-                <ul className="space-y-3">
-                  {subscriptionProduct.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-3 text-sm text-gray-300"
-                    >
-                      <svg
-                        className="w-5 h-5 text-[#00C853] mt-0.5 shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features */}
-      <section id="fonctionnalites" className="py-20 bg-gray-50">
+      <section id="fonctionnalites" className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F2B46]">
-              Pourquoi choisir Fino ?
+              Pourquoi choisir Mon Fino ?
             </h2>
             <p className="mt-3 text-gray-500 text-lg">
               Des outils pensés pour simplifier votre quotidien

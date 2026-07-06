@@ -19,12 +19,12 @@ export async function sendPurchaseEmail(
   downloadUrl: string
 ) {
   const firstName = customerName?.split(" ")[0] || "cher client";
-  const fromEmail = process.env.EMAIL_FROM || "Fino <noreply@fino.fr>";
+  const fromEmail = process.env.EMAIL_FROM || "Mon Fino <noreply@monfino.fr>";
 
   await getResend().emails.send({
     from: fromEmail,
     to: customerEmail,
-    subject: `Votre achat Fino — ${product.name}`,
+    subject: `Votre achat Mon Fino — ${product.name}`,
     html: buildEmailHtml(firstName, product, downloadUrl),
   });
 }
@@ -44,7 +44,7 @@ function buildEmailHtml(
     <!-- Header -->
     <div style="text-align:center;margin-bottom:32px;">
       <div style="display:inline-block;background:#0F2B46;color:white;font-weight:800;font-size:24px;padding:10px 20px;border-radius:10px;letter-spacing:-0.5px;">
-        <span style="color:#00C853;">●</span> Fino
+        <span style="color:#00C853;">●</span> Mon Fino
       </div>
     </div>
 
@@ -52,7 +52,7 @@ function buildEmailHtml(
     <div style="background:white;border-radius:16px;padding:40px 32px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
 
       <h1 style="color:#0F2B46;font-size:24px;margin:0 0 8px 0;">
-        Merci ${firstName} ! 🎉
+        Merci ${firstName} !
       </h1>
       <p style="color:#6b7280;font-size:16px;line-height:1.6;margin:0 0 24px 0;">
         Votre achat a bien été confirmé. Voici votre produit, prêt à télécharger.
@@ -73,7 +73,7 @@ function buildEmailHtml(
       <div style="text-align:center;margin:32px 0;">
         <a href="${downloadUrl}"
            style="display:inline-block;background:#00C853;color:white;font-weight:700;font-size:16px;padding:16px 40px;border-radius:50px;text-decoration:none;">
-          Télécharger mon produit →
+          Télécharger mon produit
         </a>
       </div>
 
@@ -86,10 +86,10 @@ function buildEmailHtml(
     <!-- Footer -->
     <div style="text-align:center;margin-top:32px;">
       <p style="color:#9ca3af;font-size:12px;margin:0 0 4px 0;">
-        Fino — Finance Solo
+        Mon Fino — Finance Solo
       </p>
       <p style="color:#d1d5db;font-size:11px;margin:0;">
-        Cet email a été envoyé suite à votre achat sur fino.fr
+        Cet email a été envoyé suite à votre achat sur monfino.fr
       </p>
     </div>
   </div>

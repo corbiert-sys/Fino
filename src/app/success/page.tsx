@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Merci pour votre achat — Fino",
+  title: "Merci pour votre achat — Mon Fino",
 };
 
 export default function SuccessPage() {

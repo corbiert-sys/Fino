@@ -1,11 +1,11 @@
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 160 44"
+      viewBox="0 0 230 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Fino"
+      aria-label="Mon Fino"
     >
       {/* Icon: rounded square with mini chart */}
       <rect x="0" y="2" width="40" height="40" rx="10" fill="#0F2B46" />
@@ -26,7 +26,7 @@ export function Logo({ className = "" }: { className?: string }) {
       {/* Dot at end of trend line */}
       <circle cx="28.5" cy="10" r="2.5" fill="white" />
 
-      {/* Text: Fino */}
+      {/* Text: Mon Fino */}
       <text
         x="50"
         y="32"
@@ -36,11 +36,11 @@ export function Logo({ className = "" }: { className?: string }) {
         fill="#0F2B46"
         letterSpacing="-1"
       >
-        Fino
+        Mon Fino
       </text>
 
-      {/* Green dot on the i */}
-      <circle cx="68.5" cy="9" r="3.5" fill="#00C853" />
+      {/* Green dot on the i in Fino */}
+      <circle cx="138" cy="9" r="3.5" fill="#00C853" />
     </svg>
   );
 }
@@ -52,7 +52,7 @@ export function LogoIcon({ className = "" }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Fino"
+      aria-label="Mon Fino"
     >
       <rect width="40" height="40" rx="10" fill="#0F2B46" />
       <rect x="7" y="24" width="5" height="10" rx="1.5" fill="#00C853" />

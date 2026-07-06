@@ -17,7 +17,7 @@ export async function generateMetadata({
   const product = getProduct(id);
   if (!product) return {};
   return {
-    title: `${product.name} — Fino`,
+    title: `${product.name} — Mon Fino`,
     description: product.description,
   };
 }
@@ -31,7 +31,6 @@ export default async function ProductPage({
   const product = getProduct(id);
   if (!product) notFound();
 
-  const isSubscription = product.type === "subscription";
   const isBundle = product.type === "bundle";
 
   return (
@@ -96,32 +95,20 @@ export default async function ProductPage({
                 <span className="text-4xl font-extrabold text-[#0F2B46]">
                   {formatPrice(product.price)}
                 </span>
-                {isSubscription ? (
-                  <span className="text-gray-400">/mois</span>
-                ) : (
-                  <span className="text-gray-400">TTC</span>
-                )}
+                <span className="text-gray-400">TTC</span>
                 {product.originalPrice && (
                   <span className="text-xl text-gray-400 line-through ml-2">
                     {formatPrice(product.originalPrice)}
                   </span>
                 )}
-                {!isSubscription && (
-                  <span className="text-sm text-gray-400">
-                    · Paiement unique
-                  </span>
-                )}
-                {isSubscription && (
-                  <span className="text-sm text-gray-400">
-                    · Sans engagement
-                  </span>
-                )}
+                <span className="text-sm text-gray-400">
+                  · Paiement unique
+                </span>
               </div>
 
               <BuyButton
                 productId={product.id}
                 productName={product.shortName}
-                isSubscription={isSubscription}
               />
 
               <div className="mt-4 flex items-center gap-4 text-xs text-gray-400 flex-wrap">
@@ -141,24 +128,22 @@ export default async function ProductPage({
                   </svg>
                   Paiement sécurisé
                 </span>
-                {!isSubscription && (
-                  <span className="flex items-center gap-1">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                      />
-                    </svg>
-                    Téléchargement immédiat
-                  </span>
-                )}
+                <span className="flex items-center gap-1">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    />
+                  </svg>
+                  Téléchargement immédiat
+                </span>
                 <span className="flex items-center gap-1">
                   <svg
                     className="w-4 h-4"
@@ -173,9 +158,7 @@ export default async function ProductPage({
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  {isSubscription
-                    ? "Résiliable à tout moment"
-                    : "Garantie 14 jours"}
+                  Garantie 14 jours
                 </span>
               </div>
             </div>
@@ -186,9 +169,7 @@ export default async function ProductPage({
             <h2 className="text-2xl font-extrabold text-[#0F2B46] mb-8">
               {isBundle
                 ? "Tout ce qui est inclus dans le pack"
-                : isSubscription
-                  ? "Ce que vous obtenez"
-                  : "Ce qui est inclus"}
+                : "Ce qui est inclus"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {product.features.map((f) => (
