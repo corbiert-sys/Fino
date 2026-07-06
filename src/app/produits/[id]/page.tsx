@@ -68,7 +68,7 @@ export default async function ProductPage({
                   </div>
                   {isBundle && (
                     <div className="mt-4 inline-block px-4 py-1.5 bg-[#00C853]/10 text-[#00C853] text-xs font-bold rounded-full">
-                      4 outils inclus
+                      3 outils inclus
                     </div>
                   )}
                 </div>

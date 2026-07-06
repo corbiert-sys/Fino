@@ -24,7 +24,7 @@ export function Footer() {
                   href="/produits/pack-lancement"
                   className="text-sm text-[#00C853] hover:text-white transition-colors font-semibold"
                 >
-                  Pack Lancement -35%
+                  Pack Lancement -39%
                 </Link>
               </li>
               <li>
@@ -33,14 +33,6 @@ export function Footer() {
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
                   Simulateur de Trésorerie
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/produits/guide-premium"
-                  className="text-sm text-gray-300 hover:text-white transition-colors"
-                >
-                  Guide Premium
                 </Link>
               </li>
               <li>

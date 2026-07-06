@@ -77,7 +77,7 @@ export default function Home() {
                 href="/#pack"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold bg-[#00C853] hover:bg-[#00B848] text-white rounded-full transition-all shadow-lg shadow-[#00C853]/30 hover:shadow-xl hover:shadow-[#00C853]/40"
               >
-                Voir le Pack -35%
+                Voir le Pack -39%
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="none"
@@ -224,7 +224,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {singleProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
