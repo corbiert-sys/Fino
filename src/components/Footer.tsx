@@ -21,6 +21,14 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
+                  href="/produits/pack-lancement"
+                  className="text-sm text-[#00C853] hover:text-white transition-colors font-semibold"
+                >
+                  Pack Lancement -35%
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/produits/simulateur-tresorerie"
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
@@ -49,6 +57,14 @@ export function Footer() {
                   className="text-sm text-gray-300 hover:text-white transition-colors"
                 >
                   Espace Notion
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/produits/club-fino"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                >
+                  Club Fino (abonnement)
                 </Link>
               </li>
             </ul>

@@ -31,6 +31,9 @@ export default async function ProductPage({
   const product = getProduct(id);
   if (!product) notFound();
 
+  const isSubscription = product.type === "subscription";
+  const isBundle = product.type === "bundle";
+
   return (
     <>
       <section className="py-12 sm:py-20">
@@ -64,6 +67,11 @@ export default async function ProductPage({
                   <div className="text-sm font-medium text-gray-400 uppercase tracking-wider">
                     {product.shortName}
                   </div>
+                  {isBundle && (
+                    <div className="mt-4 inline-block px-4 py-1.5 bg-[#00C853]/10 text-[#00C853] text-xs font-bold rounded-full">
+                      4 outils inclus
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -84,19 +92,39 @@ export default async function ProductPage({
                 {product.longDescription}
               </p>
 
-              <div className="mt-8 flex items-baseline gap-2">
+              <div className="mt-8 flex items-baseline gap-2 flex-wrap">
                 <span className="text-4xl font-extrabold text-[#0F2B46]">
                   {formatPrice(product.price)}
                 </span>
-                <span className="text-gray-400">TTC</span>
-                <span className="ml-2 text-sm text-gray-400">
-                  · Paiement unique
-                </span>
+                {isSubscription ? (
+                  <span className="text-gray-400">/mois</span>
+                ) : (
+                  <span className="text-gray-400">TTC</span>
+                )}
+                {product.originalPrice && (
+                  <span className="text-xl text-gray-400 line-through ml-2">
+                    {formatPrice(product.originalPrice)}
+                  </span>
+                )}
+                {!isSubscription && (
+                  <span className="text-sm text-gray-400">
+                    · Paiement unique
+                  </span>
+                )}
+                {isSubscription && (
+                  <span className="text-sm text-gray-400">
+                    · Sans engagement
+                  </span>
+                )}
               </div>
 
-              <BuyButton productId={product.id} productName={product.name} />
+              <BuyButton
+                productId={product.id}
+                productName={product.shortName}
+                isSubscription={isSubscription}
+              />
 
-              <div className="mt-4 flex items-center gap-4 text-xs text-gray-400">
+              <div className="mt-4 flex items-center gap-4 text-xs text-gray-400 flex-wrap">
                 <span className="flex items-center gap-1">
                   <svg
                     className="w-4 h-4"
@@ -113,22 +141,24 @@ export default async function ProductPage({
                   </svg>
                   Paiement sécurisé
                 </span>
-                <span className="flex items-center gap-1">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                    />
-                  </svg>
-                  Téléchargement immédiat
-                </span>
+                {!isSubscription && (
+                  <span className="flex items-center gap-1">
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                      />
+                    </svg>
+                    Téléchargement immédiat
+                  </span>
+                )}
                 <span className="flex items-center gap-1">
                   <svg
                     className="w-4 h-4"
@@ -143,16 +173,52 @@ export default async function ProductPage({
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  Garantie 14 jours
+                  {isSubscription
+                    ? "Résiliable à tout moment"
+                    : "Garantie 14 jours"}
                 </span>
               </div>
             </div>
           </div>
 
+          {/* Video section */}
+          {product.videoId && (
+            <div className="mt-16 sm:mt-24">
+              <h2 className="text-2xl font-extrabold text-[#0F2B46] mb-6">
+                Voir l&apos;outil en action
+              </h2>
+              <div className="bg-gradient-to-br from-[#0F2B46] to-[#1a3d5c] rounded-2xl p-8 sm:p-12 text-center">
+                <div className="max-w-lg mx-auto">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-white/10 rounded-full flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 text-[#00C853]"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <p className="text-white font-semibold text-lg mb-2">
+                    Vidéo tuto incluse avec votre achat
+                  </p>
+                  <p className="text-gray-400 text-sm">
+                    Un walkthrough complet pour prendre en main l&apos;outil en
+                    quelques minutes. Le lien de la vidéo est envoyé avec votre
+                    fichier après achat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Features list */}
           <div className="mt-16 sm:mt-24">
             <h2 className="text-2xl font-extrabold text-[#0F2B46] mb-8">
-              Ce qui est inclus
+              {isBundle
+                ? "Tout ce qui est inclus dans le pack"
+                : isSubscription
+                  ? "Ce que vous obtenez"
+                  : "Ce qui est inclus"}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {product.features.map((f) => (

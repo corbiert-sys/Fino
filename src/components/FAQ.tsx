@@ -4,28 +4,36 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Comment fonctionne le paiement ?",
-    a: "Le paiement est sécurisé via Stripe. Après votre achat, vous recevez immédiatement un lien de téléchargement par email.",
+    q: "Quelle est la différence entre le Pack et les outils à l'unité ?",
+    a: "Le Pack Lancement contient les 4 outils Fino au complet avec 35% de réduction. Si vous démarrez votre activité, c'est l'option la plus avantageuse. Vous pouvez aussi acheter chaque outil séparément selon vos besoins.",
   },
   {
-    q: "Les fichiers sont-ils compatibles Mac et PC ?",
-    a: "Oui, le Simulateur fonctionne avec Excel (Windows/Mac) et Google Sheets. Les guides sont au format PDF, lisible partout. Le template Notion se duplique en un clic.",
+    q: "Comment fonctionne le Club Fino ?",
+    a: "Le Club Fino est un abonnement mensuel à 7,90 €/mois qui vous donne accès à tous les outils, avec mises à jour automatiques des taux, alertes fiscales et support prioritaire. Sans engagement, résiliable à tout moment depuis votre espace Stripe.",
+  },
+  {
+    q: "Comment fonctionne le paiement et la livraison ?",
+    a: "Le paiement est sécurisé via Stripe (carte bancaire, Apple Pay, Google Pay). Après votre achat, vous recevez automatiquement un email avec votre lien de téléchargement et la vidéo tuto en quelques secondes.",
+  },
+  {
+    q: "Le Simulateur est-il sur Google Sheets ou Excel ?",
+    a: "Le Simulateur est disponible sur Google Sheets : accessible partout, sur Mac, PC, tablette et mobile. Pas besoin d'installer Excel. Vos taux URSSAF sont mis à jour automatiquement sans retéléchargement.",
   },
   {
     q: "Puis-je obtenir un remboursement ?",
     a: "Oui, vous bénéficiez d'une garantie satisfait ou remboursé de 14 jours. Contactez-nous par email si le produit ne vous convient pas.",
   },
   {
-    q: "Les taux URSSAF sont-ils à jour ?",
-    a: "Oui, tous nos outils sont mis à jour avec les taux en vigueur pour 2025/2026. Nous mettons à jour les fichiers à chaque changement réglementaire.",
+    q: "Les taux URSSAF et TVA sont-ils à jour ?",
+    a: "Oui, tous nos outils intègrent les taux en vigueur pour 2025/2026. Le Kit TVA inclut un calculateur de seuil intégré qui vous alerte automatiquement quand vous approchez du seuil de franchise.",
   },
   {
     q: "Le simulateur convient-il à mon activité ?",
     a: "Le simulateur couvre tous les statuts micro-entrepreneur : BIC Vente, BIC Prestations de services, BNC Libérale (réglementée et non réglementée), et Agent commercial.",
   },
   {
-    q: "Ai-je besoin de connaissances en comptabilité ?",
-    a: "Non, les outils Fino sont conçus pour les non-comptables. Le Guide Premium vous accompagne pas à pas dans chaque étape.",
+    q: "Des vidéos tuto sont-elles incluses ?",
+    a: "Oui, chaque outil est accompagné d'une vidéo walkthrough de 5-10 minutes qui vous montre pas à pas comment le configurer et l'utiliser. Le lien est envoyé avec votre fichier après achat.",
   },
 ];
 

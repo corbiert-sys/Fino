@@ -1,4 +1,9 @@
-import { products } from "@/lib/products";
+import {
+  singleProducts,
+  bundleProduct,
+  subscriptionProduct,
+  formatPrice,
+} from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
 import { FAQ } from "@/components/FAQ";
 import Link from "next/link";
@@ -30,9 +35,9 @@ const features = [
     desc: "Pensé par et pour les micro-entrepreneurs et freelances.",
   },
   {
-    icon: "💬",
-    title: "Support réactif",
-    desc: "Une question ? Notre équipe vous répond sous 24h.",
+    icon: "🎬",
+    title: "Vidéos tuto incluses",
+    desc: "Un walkthrough vidéo pour chaque outil, pas besoin de deviner.",
   },
 ];
 
@@ -70,10 +75,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link
-                href="/#produits"
+                href="/#pack"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold bg-[#00C853] hover:bg-[#00B848] text-white rounded-full transition-all shadow-lg shadow-[#00C853]/30 hover:shadow-xl hover:shadow-[#00C853]/40"
               >
-                Découvrir les outils
+                Voir le Pack -35%
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="none"
@@ -89,10 +94,10 @@ export default function Home() {
                 </svg>
               </Link>
               <Link
-                href="/#fonctionnalites"
+                href="/#produits"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold bg-white/10 hover:bg-white/20 text-white rounded-full transition-all backdrop-blur-sm border border-white/20"
               >
-                En savoir plus
+                Voir les outils à l&apos;unité
               </Link>
             </div>
           </div>
@@ -117,22 +122,173 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Products */}
-      <section id="produits" className="py-20">
+      {/* Bundle — Pack Lancement */}
+      <section id="pack" className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F2B46]">
+              Le Pack Lancement
+            </h2>
+            <p className="mt-3 text-gray-500 text-lg">
+              Tout ce qu&apos;il faut pour démarrer — à prix réduit
+            </p>
+          </div>
+
+          <div className="relative bg-white rounded-3xl border-2 border-[#00C853] shadow-xl shadow-[#00C853]/10 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 bg-[#00C853] text-white text-center text-sm font-bold py-2">
+              MEILLEURE OFFRE — Économisez{" "}
+              {formatPrice(
+                (bundleProduct.originalPrice || 0) - bundleProduct.price
+              )}
+            </div>
+            <div className="pt-14 p-8 sm:p-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="text-5xl mb-4">{bundleProduct.icon}</div>
+                  <h3 className="text-2xl font-extrabold text-[#0F2B46] mb-3">
+                    {bundleProduct.name}
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed mb-6">
+                    {bundleProduct.description}
+                  </p>
+                  <div className="flex items-baseline gap-3 mb-6">
+                    <span className="text-4xl font-extrabold text-[#0F2B46]">
+                      {formatPrice(bundleProduct.price)}
+                    </span>
+                    {bundleProduct.originalPrice && (
+                      <span className="text-xl text-gray-400 line-through">
+                        {formatPrice(bundleProduct.originalPrice)}
+                      </span>
+                    )}
+                    <span className="text-sm text-gray-400">TTC</span>
+                  </div>
+                  <Link
+                    href={`/produits/${bundleProduct.id}`}
+                    className="inline-flex items-center justify-center px-10 py-4 text-base font-bold bg-[#00C853] hover:bg-[#00B848] text-white rounded-full transition-all shadow-lg shadow-[#00C853]/25"
+                  >
+                    Obtenir le Pack Complet
+                    <svg
+                      className="w-5 h-5 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+                <div>
+                  <ul className="space-y-3">
+                    {bundleProduct.features.map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-start gap-3 text-sm text-gray-600"
+                      >
+                        <svg
+                          className="w-5 h-5 text-[#00C853] mt-0.5 shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Individual Products */}
+      <section id="produits" className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F2B46]">
-              Nos outils
+              Ou choisissez à l&apos;unité
             </h2>
             <p className="mt-3 text-gray-500 text-lg">
-              Choisissez l&apos;outil qui correspond à votre besoin
+              Chaque outil fonctionne indépendamment
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {singleProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Club Fino — Subscription */}
+      <section id="club" className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="bg-gradient-to-br from-[#0F2B46] to-[#1a3d5c] rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00C853] rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/3" />
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00C853]/20 rounded-full text-xs font-bold text-[#00C853] mb-4">
+                  ABONNEMENT
+                </div>
+                <div className="text-5xl mb-4">{subscriptionProduct.icon}</div>
+                <h2 className="text-3xl font-extrabold mb-3">
+                  {subscriptionProduct.name}
+                </h2>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  {subscriptionProduct.description}
+                </p>
+                <div className="flex items-baseline gap-2 mb-6">
+                  <span className="text-4xl font-extrabold">
+                    {formatPrice(subscriptionProduct.price)}
+                  </span>
+                  <span className="text-gray-400">/mois</span>
+                </div>
+                <Link
+                  href={`/produits/${subscriptionProduct.id}`}
+                  className="inline-flex items-center justify-center px-10 py-4 text-base font-bold bg-[#00C853] hover:bg-[#00B848] text-white rounded-full transition-all shadow-lg shadow-[#00C853]/30"
+                >
+                  Rejoindre le Club
+                </Link>
+              </div>
+              <div>
+                <ul className="space-y-3">
+                  {subscriptionProduct.features.map((f) => (
+                    <li
+                      key={f}
+                      className="flex items-start gap-3 text-sm text-gray-300"
+                    >
+                      <svg
+                        className="w-5 h-5 text-[#00C853] mt-0.5 shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -160,27 +316,6 @@ export default function Home() {
                 <p className="text-sm text-gray-500">{f.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="bg-gradient-to-br from-[#0F2B46] to-[#1a3d5c] rounded-3xl p-10 sm:p-16 text-white">
-            <h2 className="text-3xl sm:text-4xl font-extrabold">
-              Prêt à reprendre le contrôle de vos finances ?
-            </h2>
-            <p className="mt-4 text-gray-300 text-lg max-w-xl mx-auto">
-              Rejoignez les entrepreneurs qui pilotent déjà leur activité avec
-              les outils Fino.
-            </p>
-            <Link
-              href="/#produits"
-              className="inline-flex items-center justify-center mt-8 px-10 py-4 text-base font-bold bg-[#00C853] hover:bg-[#00B848] text-white rounded-full transition-all shadow-lg shadow-[#00C853]/30"
-            >
-              Commencer maintenant
-            </Link>
           </div>
         </div>
       </section>

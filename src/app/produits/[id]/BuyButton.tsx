@@ -5,9 +5,11 @@ import { useState } from "react";
 export function BuyButton({
   productId,
   productName,
+  isSubscription,
 }: {
   productId: string;
   productName: string;
+  isSubscription?: boolean;
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -24,8 +26,7 @@ export function BuyButton({
         window.location.href = data.url;
       } else {
         alert(
-          data.error ||
-            "Une erreur est survenue. Veuillez réessayer."
+          data.error || "Une erreur est survenue. Veuillez réessayer."
         );
       }
     } catch {
@@ -34,6 +35,10 @@ export function BuyButton({
       setLoading(false);
     }
   }
+
+  const label = isSubscription
+    ? `S'abonner au ${productName}`
+    : `Acheter ${productName}`;
 
   return (
     <button
@@ -66,7 +71,7 @@ export function BuyButton({
         </>
       ) : (
         <>
-          Acheter {productName}
+          {label}
           <svg
             className="w-5 h-5 ml-2"
             fill="none"

@@ -37,12 +37,24 @@ export function ProductCard({ product }: { product: Product }) {
           <span className="text-3xl font-extrabold text-[#0F2B46]">
             {formatPrice(product.price)}
           </span>
-          <span className="text-sm text-gray-400 ml-1">TTC</span>
+          {product.type === "subscription" ? (
+            <span className="text-sm text-gray-400 ml-1">/mois</span>
+          ) : (
+            <span className="text-sm text-gray-400 ml-1">TTC</span>
+          )}
+          {product.originalPrice && (
+            <span className="ml-2 text-sm text-gray-400 line-through">
+              {formatPrice(product.originalPrice)}
+            </span>
+          )}
         </div>
 
         <ul className="space-y-2 mb-6">
           {product.features.slice(0, 4).map((f) => (
-            <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
+            <li
+              key={f}
+              className="flex items-start gap-2 text-sm text-gray-600"
+            >
               <svg
                 className="w-4 h-4 text-[#00C853] mt-0.5 shrink-0"
                 fill="none"
@@ -69,7 +81,7 @@ export function ProductCard({ product }: { product: Product }) {
               : "bg-[#0F2B46] hover:bg-[#1a3d5c] text-white"
           }`}
         >
-          Découvrir
+          {product.type === "subscription" ? "S'abonner" : "Découvrir"}
         </Link>
       </div>
     </div>
