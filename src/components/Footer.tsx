@@ -24,7 +24,7 @@ export function Footer() {
                   href="/produits/pack-lancement"
                   className="text-sm text-[#00C853] hover:text-white transition-colors font-semibold"
                 >
-                  Pack Lancement -39%
+                  Pack Lancement -15%
                 </Link>
               </li>
               <li>

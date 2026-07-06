@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Quelle est la différence entre le Pack et les outils à l'unité ?",
-    a: "Le Pack Lancement contient les 3 outils Mon Fino au complet avec près de 40 % de réduction. Si vous démarrez votre activité, c'est l'option la plus avantageuse. Vous pouvez aussi acheter chaque outil séparément selon vos besoins.",
+    a: "Le Pack Lancement contient les 3 outils Mon Fino au complet avec 15 % de réduction. Si vous démarrez votre activité, c'est l'option la plus avantageuse. Vous pouvez aussi acheter chaque outil séparément selon vos besoins.",
   },
   {
     q: "Comment fonctionne le paiement et la livraison ?",
