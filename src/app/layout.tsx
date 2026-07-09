@@ -10,18 +10,17 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Mon Fino — Finance Solo | Outils pour micro-entrepreneurs",
+  title: "PawlyDog | Gilets de sauvetage pour chiens - Securite aquatique",
   description:
-    "Simulateur de trésorerie, guides et outils pour piloter votre micro-entreprise avec clarté. Conçus pour les auto-entrepreneurs et freelances.",
+    "PawlyDog - Gilets de sauvetage premium pour chiens. Protegez votre compagnon lors de toutes ses aventures aquatiques avec nos equipements certifies et confortables.",
   keywords: [
-    "micro-entrepreneur",
-    "auto-entrepreneur",
-    "freelance",
-    "trésorerie",
-    "URSSAF",
-    "TVA",
-    "simulateur",
-    "charges",
+    "gilet de sauvetage chien",
+    "gilet sauvetage canin",
+    "securite aquatique chien",
+    "accessoires chien eau",
+    "gilet flottaison chien",
+    "PawlyDog",
+    "equipement nautique chien",
   ],
 };
 

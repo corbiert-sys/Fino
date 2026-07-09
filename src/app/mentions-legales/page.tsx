@@ -1,65 +1,56 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Mon Fino",
+  title: "Mentions legales — PawlyDog",
 };
 
 export default function MentionsLegales() {
   return (
     <section className="py-12 sm:py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 prose prose-sm prose-gray">
-        <h1 className="text-3xl font-extrabold text-[#0F2B46]">
-          Mentions légales
+        <h1 className="text-3xl font-extrabold text-[#1B4965]">
+          Mentions legales
         </h1>
 
-        <h2 className="text-lg font-bold text-[#0F2B46] mt-8">Éditeur</h2>
+        <h2 className="text-lg font-bold text-[#1B4965] mt-8">Editeur</h2>
         <p className="text-gray-600">
-          Mon Fino — Finance Solo
+          PawlyDog
           <br />
           [Votre nom / raison sociale]
           <br />
           [Adresse]
           <br />
-          [Email de contact]
+          contact@pawlydog.com
           <br />
-          SIRET : [Votre numéro SIRET]
+          SIRET : [Votre numero SIRET]
         </p>
 
-        <h2 className="text-lg font-bold text-[#0F2B46] mt-8">Hébergement</h2>
+        <h2 className="text-lg font-bold text-[#1B4965] mt-8">Hebergement</h2>
         <p className="text-gray-600">
-          Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina,
-          CA 91723, États-Unis.
+          Ce site est heberge par Vercel Inc., 440 N Barranca Ave #4133, Covina,
+          CA 91723, Etats-Unis.
         </p>
 
-        <h2 className="text-lg font-bold text-[#0F2B46] mt-8">
-          Propriété intellectuelle
+        <h2 className="text-lg font-bold text-[#1B4965] mt-8">
+          Propriete intellectuelle
         </h2>
         <p className="text-gray-600">
-          L&apos;ensemble des contenus présents sur ce site (textes, images,
-          outils, fichiers) sont la propriété exclusive de Mon Fino et sont protégés
+          L&apos;ensemble des contenus presents sur ce site (textes, images,
+          logos, illustrations) sont la propriete exclusive de PawlyDog et sont proteges
           par le droit d&apos;auteur. Toute reproduction est interdite sans
-          autorisation préalable.
+          autorisation prealable.
         </p>
 
-        <h2 className="text-lg font-bold text-[#0F2B46] mt-8">
-          Données personnelles
+        <h2 className="text-lg font-bold text-[#1B4965] mt-8">
+          Donnees personnelles
         </h2>
         <p className="text-gray-600">
-          Les données collectées lors du processus d&apos;achat (email, nom)
-          sont utilisées uniquement pour la livraison de votre commande. Elles ne
-          sont jamais revendues à des tiers. Conformément au RGPD, vous pouvez
-          exercer vos droits d&apos;accès, de rectification et de suppression en
-          nous contactant par email.
-        </p>
-
-        <h2 className="text-lg font-bold text-[#0F2B46] mt-8">
-          Avertissement
-        </h2>
-        <p className="text-gray-600">
-          Les outils Mon Fino sont fournis à titre indicatif et constituent une aide
-          à la décision. Ils ne se substituent pas aux conseils d&apos;un
-          expert-comptable. Les taux affichés sont ceux en vigueur au moment de
-          la publication.
+          Les donnees collectees lors du processus d&apos;achat (email, nom,
+          adresse de livraison) sont utilisees uniquement pour le traitement et la
+          livraison de votre commande. Elles ne sont jamais revendues a des tiers.
+          Conformement au RGPD, vous pouvez exercer vos droits d&apos;acces, de
+          rectification et de suppression en nous contactant par email a
+          contact@pawlydog.com.
         </p>
       </div>
     </section>

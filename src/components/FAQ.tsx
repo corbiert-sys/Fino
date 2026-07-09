@@ -4,32 +4,32 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Quelle est la différence entre le Pack et les outils à l'unité ?",
-    a: "Le Pack Lancement contient les 3 outils Mon Fino au complet avec 15 % de réduction. Si vous démarrez votre activité, c'est l'option la plus avantageuse. Vous pouvez aussi acheter chaque outil séparément selon vos besoins.",
+    q: "Comment choisir la bonne taille de gilet pour mon chien ?",
+    a: "Mesurez le tour de poitrine de votre chien (juste derriere les pattes avant) et son poids. Consultez notre guide des tailles ci-dessus pour trouver la taille ideale. En cas d'hesitation entre deux tailles, prenez la taille superieure - les sangles ajustables permettront un ajustement parfait.",
   },
   {
-    q: "Comment fonctionne le paiement et la livraison ?",
-    a: "Le paiement est sécurisé via Stripe (carte bancaire, Apple Pay, Google Pay). Après votre achat, vous recevez automatiquement un email avec votre lien de téléchargement personnel en quelques secondes.",
+    q: "Mon chien sait deja nager, a-t-il vraiment besoin d'un gilet ?",
+    a: "Absolument. Meme les chiens bons nageurs peuvent se fatiguer, etre surpris par un courant ou paniquer en eau profonde. Le gilet de sauvetage offre une securite supplementaire et vous permet de les recuperer facilement grace a la poignee dorsale. C'est aussi obligatoire pour certaines activites nautiques.",
   },
   {
-    q: "Le Simulateur est-il sur Google Sheets ou Excel ?",
-    a: "Le Simulateur est disponible sur Google Sheets : accessible partout, sur Mac, PC, tablette et mobile. Pas besoin d'installer Excel. Vos taux URSSAF sont mis à jour automatiquement sans retéléchargement.",
+    q: "Comment entretenir le gilet de sauvetage ?",
+    a: "Rincez le gilet a l'eau douce apres chaque utilisation en eau salee ou chloree. Laissez-le secher a l'air libre, a l'ombre. Ne le mettez pas au seche-linge. Verifiez regulierement l'etat des boucles et des sangles. Nos gilets en neoprene sechent 2x plus vite que les modeles classiques.",
   },
   {
-    q: "Puis-je obtenir un remboursement ?",
-    a: "Oui, vous bénéficiez d'une garantie satisfait ou remboursé de 14 jours. Contactez-nous par email si le produit ne vous convient pas.",
+    q: "Les gilets conviennent-ils a toutes les races ?",
+    a: "Oui, nos gilets sont concus pour s'adapter a toutes les morphologies grace aux sangles multi-points ajustables. Du Chihuahua au Berger Allemand, chaque chien trouvera sa taille. La gamme Puppy est specialement concue pour les chiots et petites races.",
   },
   {
-    q: "Les taux URSSAF et TVA sont-ils à jour ?",
-    a: "Oui, tous nos outils intègrent les taux en vigueur pour 2025/2026. Le Kit TVA inclut un calculateur de seuil intégré qui vous alerte automatiquement quand vous approchez du seuil de franchise.",
+    q: "Quel est le delai de livraison ?",
+    a: "Livraison en 3-5 jours ouvrables en France metropolitaine, 5-8 jours pour l'Europe. Livraison offerte a partir de 60 euros d'achat. Vous recevrez un email de suivi des l'expedition de votre commande.",
   },
   {
-    q: "Le simulateur convient-il à mon activité ?",
-    a: "Le simulateur couvre tous les statuts micro-entrepreneur : BIC Vente, BIC Prestations de services, BNC Libérale (réglementée et non réglementée), et Agent commercial.",
+    q: "Puis-je retourner un gilet si la taille ne convient pas ?",
+    a: "Bien sur ! Vous disposez de 30 jours pour retourner ou echanger votre gilet s'il n'a pas ete utilise en eau. Les frais de retour sont a notre charge pour les echanges de taille. Contactez-nous a contact@pawlydog.com pour initier le processus.",
   },
   {
-    q: "Ai-je besoin de connaissances en comptabilité ?",
-    a: "Non, les outils Mon Fino sont conçus pour les non-comptables. Le Guide Premium vous accompagne pas à pas dans chaque étape, avec des exemples concrets et un glossaire complet.",
+    q: "Le Pack Aventure est-il vraiment avantageux ?",
+    a: "Oui ! Le Pack Aventure Nautique vous fait economiser 15% par rapport a l'achat separe des 3 articles (gilet AquaPaw Pro + laisse aquatique + gamelle pliable). De plus, la livraison est offerte avec le pack, quel que soit le montant.",
   },
 ];
 
@@ -37,14 +37,14 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-20 bg-[#F0F9FF]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-[#0F2B46]">
-            Questions fréquentes
+          <h2 className="text-3xl font-extrabold text-[#1B4965]">
+            Questions frequentes
           </h2>
           <p className="mt-3 text-gray-500">
-            Tout ce que vous devez savoir avant de vous lancer
+            Tout ce que vous devez savoir sur nos gilets de sauvetage
           </p>
         </div>
 
@@ -52,17 +52,17 @@ export function FAQ() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+              className="bg-white rounded-xl border border-gray-200 overflow-hidden transition-shadow hover:shadow-md"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between p-5 text-left"
               >
-                <span className="font-semibold text-[#0F2B46] text-sm sm:text-base pr-4">
+                <span className="font-semibold text-[#1B4965] text-sm sm:text-base pr-4">
                   {faq.q}
                 </span>
                 <svg
-                  className={`w-5 h-5 text-gray-400 shrink-0 transition-transform ${
+                  className={`w-5 h-5 text-[#FF6B35] shrink-0 transition-transform duration-300 ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                   fill="none"

@@ -1,4 +1,13 @@
-export type ProductType = "one-time" | "bundle";
+export type ProductType = "single" | "bundle";
+
+export type ProductSize = "XXS" | "XS" | "S" | "M" | "L" | "XL";
+
+export interface SizeInfo {
+  size: ProductSize;
+  weight: string;
+  chest: string;
+  neck: string;
+}
 
 export interface Product {
   id: string;
@@ -9,129 +18,126 @@ export interface Product {
   description: string;
   longDescription: string;
   features: string[];
-  icon: string;
   badge?: string;
   popular?: boolean;
   type: ProductType;
-  fileName: string;
+  color: string;
+  availableSizes: ProductSize[];
   bundleProductIds?: string[];
 }
 
+export const sizeChart: SizeInfo[] = [
+  { size: "XXS", weight: "1-3 kg", chest: "28-35 cm", neck: "20-25 cm" },
+  { size: "XS", weight: "3-6 kg", chest: "35-42 cm", neck: "25-30 cm" },
+  { size: "S", weight: "6-12 kg", chest: "42-52 cm", neck: "30-38 cm" },
+  { size: "M", weight: "12-22 kg", chest: "52-65 cm", neck: "38-46 cm" },
+  { size: "L", weight: "22-36 kg", chest: "65-80 cm", neck: "46-55 cm" },
+  { size: "XL", weight: "36-50 kg", chest: "80-100 cm", neck: "55-65 cm" },
+];
+
 export const products: Product[] = [
   {
-    id: "pack-lancement",
-    name: "Pack Lancement Complet",
-    shortName: "Pack Complet",
-    price: 6900,
-    originalPrice: 8200,
+    id: "aquapaw-pro",
+    name: "AquaPaw Pro",
+    shortName: "Pro",
+    price: 5990,
     description:
-      "Les 3 outils Mon Fino réunis à prix réduit. Tout ce qu'il faut pour lancer et piloter votre micro-entreprise sereinement.",
+      "Notre gilet de sauvetage haute performance. Poignee de sauvetage renforcee, neoprene premium et sechage ultra-rapide.",
     longDescription:
-      "Le Pack Lancement regroupe l'intégralité des outils Mon Fino : le Simulateur de Trésorerie avec son Guide Premium intégré (Google Sheets + PDF), le Kit TVA 2026 avec calculateur de seuil, et l'Espace Notion avec automatisations. Vous économisez 15 % par rapport à l'achat séparé et démarrez avec une boîte à outils complète, pensée pour vous faire gagner du temps dès le premier jour.",
+      "L'AquaPaw Pro est notre gilet de sauvetage premium, concu pour les chiens actifs qui aiment l'eau. Dote d'une poignee de sauvetage ergonomique renforcee, d'un neoprene haute densite a sechage rapide et de panneaux reflechissants 360 degres pour une visibilite maximale. Le systeme de flottabilite repartie assure une position naturelle de nage, tandis que les boucles a deverrouillage rapide permettent un enfilage en moins de 30 secondes. Point d'attache pour laisse integre au niveau de la poignee dorsale.",
     features: [
-      "Simulateur de Trésorerie & Charges + Guide Premium (Google Sheets + PDF 50+ pages)",
-      "Kit Passage à la TVA 2026 + Calculateur de seuil — anticipez et sécurisez la transition",
-      "Espace Pré-Compta Notion avec automatisations — rappels, factures et suivi clients intégrés",
-      "Économie de 15 % vs achat séparé",
-      "Mises à jour gratuites à vie",
-      "Support prioritaire par email sous 24 h",
+      "Neoprene premium haute densite - sechage 2x plus rapide",
+      "Poignee de sauvetage ergonomique renforcee",
+      "Reflechissant 360 degres - visibilite jour et nuit",
+      "Flottabilite repartie pour une nage naturelle",
+      "Point d'attache laisse integre",
+      "Boucles a deverrouillage rapide - enfilage en 30 sec",
+      "Mentonniere rembourrée pour le confort",
+      "3 sangles ajustables pour un maintien parfait",
     ],
-    icon: "🚀",
+    badge: "Best-seller",
+    popular: true,
+    type: "single",
+    color: "#FF6B35",
+    availableSizes: ["XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: "aquapaw-classic",
+    name: "AquaPaw Classic",
+    shortName: "Classic",
+    price: 3990,
+    description:
+      "Le gilet de sauvetage essentiel. Securite certifiee, confort optimal et rapport qualite-prix imbattable pour toutes les aventures aquatiques.",
+    longDescription:
+      "L'AquaPaw Classic offre une protection fiable pour toutes les sorties au bord de l'eau. Mousse de flottabilite haute densite, poignee dorsale solide et bandes reflechissantes haute visibilite. Son tissu ripstop resistant aux griffures garantit une duree de vie exceptionnelle. Disponible dans des couleurs vives pour reperer votre compagnon a distance. Le compagnon ideal pour les lacs, rivieres et plages.",
+    features: [
+      "Mousse de flottabilite haute densite certifiee",
+      "Poignee dorsale solide",
+      "Bandes reflechissantes haute visibilite",
+      "Tissu ripstop resistant aux griffures",
+      "2 sangles ajustables avec boucles securisees",
+      "Mentonniere de confort integree",
+      "Sechage rapide",
+      "Couleurs vives pour visibilite a distance",
+    ],
+    type: "single",
+    color: "#5FA8D3",
+    availableSizes: ["XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: "aquapaw-puppy",
+    name: "AquaPaw Puppy",
+    shortName: "Puppy",
+    price: 2990,
+    description:
+      "Le premier gilet de sauvetage specialement concu pour les chiots et les petits chiens. Ultra-leger et super confortable pour une initiation en douceur.",
+    longDescription:
+      "L'AquaPaw Puppy est specialement concu pour les chiots et petits chiens qui decouvrent l'eau. Ultra-leger (seulement 120g en taille XXS), il ne gene pas les mouvements et offre une flottabilite parfaite pour les premiers bains. La fermeture par velcro extra-large facilite l'enfilage meme avec un chiot qui gigote. Design adorable avec des couleurs pastels irresistibles. Systeme de taille evolutif qui accompagne la croissance de votre chiot.",
+    features: [
+      "Ultra-leger - a partir de 120g seulement",
+      "Fermeture velcro extra-large - enfilage facile",
+      "Flottabilite adaptee aux chiots",
+      "Tissu doux anti-irritation",
+      "Systeme de taille evolutif",
+      "Poignee dorsale souple",
+      "Coloris pastels adorables",
+      "Ideal pour la premiere initiation a l'eau",
+    ],
+    badge: "Nouveaute",
+    type: "single",
+    color: "#F59E0B",
+    availableSizes: ["XXS", "XS", "S"],
+  },
+  {
+    id: "pack-aventure",
+    name: "Pack Aventure Nautique",
+    shortName: "Pack Aventure",
+    price: 7990,
+    originalPrice: 9470,
+    description:
+      "L'equipement complet pour les aventures aquatiques : le gilet AquaPaw Pro + la laisse aquatique + la gamelle de voyage pliable. Economisez 15%.",
+    longDescription:
+      "Le Pack Aventure Nautique reunit tout l'essentiel pour profiter de l'eau avec votre compagnon en toute securite. Incluant notre best-seller l'AquaPaw Pro, une laisse aquatique flottante de 3 metres et une gamelle pliable de voyage, ce pack vous fait economiser 15% par rapport a l'achat separe. Tout est pense pour la praticite : la laisse flotte et reste visible, la gamelle se plie a plat dans votre sac, et le gilet Pro assure une protection maximale.",
+    features: [
+      "Gilet AquaPaw Pro inclus - notre best-seller",
+      "Laisse aquatique flottante 3m - haute visibilite",
+      "Gamelle de voyage pliable en silicone alimentaire",
+      "Economie de 15% vs achat separe",
+      "Sac de transport en toile recyclee inclus",
+      "Livraison gratuite incluse",
+    ],
     badge: "-15%",
     popular: true,
     type: "bundle",
-    fileName: "MonFino_Pack_Lancement_Complet.zip",
-    bundleProductIds: [
-      "simulateur-tresorerie",
-      "kit-tva-2026",
-      "espace-notion-precompta",
-    ],
-  },
-  {
-    id: "simulateur-tresorerie",
-    name: "Simulateur de Trésorerie & Charges + Guide Premium",
-    shortName: "Simulateur + Guide",
-    price: 3900,
-    description:
-      "Le simulateur complet sur Google Sheets + le guide premium PDF de 50+ pages. Pilotez vos finances en temps réel avec un accompagnement pas à pas.",
-    longDescription:
-      "Le Simulateur de Trésorerie Mon Fino est votre co-pilote financier au quotidien. Disponible sur Google Sheets, il est accessible partout (Mac, PC, tablette, mobile) et impossible à perdre. Saisissez vos factures, et le simulateur calcule automatiquement vos cotisations URSSAF, votre impôt VFL et votre revenu net disponible en temps réel. Livré avec le Guide Premium de plus de 50 pages qui vous accompagne pas à pas : configuration, méthode des 3 comptes recommandée par les experts-comptables, calendrier URSSAF complet, glossaire et exemples concrets. Vous êtes opérationnel en moins de 15 minutes.",
-    features: [
-      "Google Sheets — accessible partout, Mac, PC, tablette et mobile",
-      "Tableau de bord avec 6 KPIs essentiels (CA, charges, net, provision, tendance, objectif)",
-      "Calcul automatique des cotisations URSSAF selon votre statut",
-      "Option Versement Forfaitaire Libératoire (VFL) activable en 1 clic",
-      "Ventilation mensuelle automatique de votre activité",
-      "Graphique de progression mensuel avec courbe de tendance",
-      "Taux officiels 2025/2026 mis à jour automatiquement sans retéléchargement",
-      "Plus de 500 lignes de saisie — suffisant pour plusieurs années d'activité",
-      "Compatible BIC Vente, BIC Prestations, BNC Libérale et Agent commercial",
-      "Guide Premium PDF 50+ pages inclus — configuration, méthodes et exemples concrets",
-      "Méthode des 3 comptes pour vos provisions — recommandée par les experts-comptables",
-      "Calendrier complet des paiements URSSAF (mensuel et trimestriel)",
-      "Glossaire détaillé de tous les termes financiers et fiscaux",
-      "Checklist de démarrage — soyez opérationnel en moins de 15 minutes",
-    ],
-    icon: "📊",
-    badge: "Best-seller",
-    type: "one-time",
-    fileName: "MonFino_Simulateur_Tresorerie_Guide_Premium.zip",
-  },
-  {
-    id: "kit-tva-2026",
-    name: "Kit Passage à la TVA 2026",
-    shortName: "Kit TVA",
-    price: 2400,
-    description:
-      "Le guide opérationnel complet avec calculateur de seuil intégré pour anticiper et franchir les seuils TVA en toute sécurité.",
-    longDescription:
-      "La majorité des micro-entrepreneurs paniquent à l'idée de passer à la TVA. Ce kit lève tous les malentendus et vous guide étape par étape avec des actions concrètes. Bonus exclusif : un calculateur de seuil TVA intégré sur Google Sheets — entrez votre CA mensuel et visualisez instantanément quand vous basculerez, combien provisionner et quelles démarches effectuer. Inclut des modèles de courriers officiels et des scripts email prêts à l'emploi pour informer vos clients.",
-    features: [
-      "Calculateur de seuil TVA intégré (Google Sheets) — projection automatique de la date de bascule",
-      "Seuils TVA 2026 détaillés par catégorie (Services, Vente, Mixte)",
-      "Checklist d'alerte mensuelle automatique — ne ratez jamais une échéance",
-      "Modèle de courrier officiel pré-rédigé pour la déclaration de TVA",
-      "Comparatif complet Réel Simplifié vs Réel Normal avec recommandation",
-      "Scripts email B2B et B2C prêts à l'emploi pour informer vos clients",
-      "Guide de récupération de TVA sur vos achats professionnels",
-      "Feuille de route complète — de la franchise au régime réel en 10 étapes",
-      "Exemples chiffrés pour chaque situation (artisan, consultant, e-commerce)",
-      "Mises à jour incluses en cas d'évolution réglementaire",
-    ],
-    icon: "🏛️",
-    badge: "Nouveau",
-    type: "one-time",
-    fileName: "MonFino_Kit_TVA_2026.pdf",
-  },
-  {
-    id: "espace-notion-precompta",
-    name: "Espace Pré-Compta Notion",
-    shortName: "Notion",
-    price: 1900,
-    description:
-      "Votre espace Notion clé en main avec automatisations : rappels URSSAF, factures pré-remplies, suivi clients et calendrier fiscal intégré.",
-    longDescription:
-      "Un template Notion professionnel et complet avec des automatisations intégrées qui vous font gagner des heures chaque mois. Rappels automatiques avant chaque échéance URSSAF, bouton « Nouvelle facture » pré-rempli avec vos infos, calcul automatique des provisions à mettre de côté, et suivi visuel de votre activité. Duplicable en 1 clic, personnalisable à volonté — votre back-office de freelance, enfin organisé.",
-    features: [
-      "Template Notion professionnel prêt à dupliquer en 1 clic",
-      "Rappels automatiques avant chaque échéance URSSAF (mensuel et trimestriel)",
-      "Bouton « Nouvelle facture » pré-rempli avec vos coordonnées et mentions légales",
-      "Calcul automatique des provisions à mettre de côté chaque mois",
-      "Suivi complet des factures, devis, clients et paiements",
-      "Calendrier fiscal interactif avec toutes les dates clés de l'année",
-      "Tableau de bord visuel de votre activité avec graphiques intégrés",
-      "Base de données clients avec historique et notes",
-      "Archivage automatique des documents par année fiscale",
-      "Mises à jour incluses à chaque évolution du template",
-    ],
-    icon: "💼",
-    type: "one-time",
-    fileName: "MonFino_Espace_PreCompta_Notion.pdf",
+    color: "#FF6B35",
+    availableSizes: ["XS", "S", "M", "L", "XL"],
+    bundleProductIds: ["aquapaw-pro"],
   },
 ];
 
-export const singleProducts = products.filter((p) => p.type === "one-time");
+export const singleProducts = products.filter((p) => p.type === "single");
 export const bundleProduct = products.find((p) => p.type === "bundle")!;
+export const featuredProduct = products.find((p) => p.id === "aquapaw-pro")!;
 
 export function getProduct(id: string): Product | undefined {
   return products.find((p) => p.id === id);

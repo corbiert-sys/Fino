@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
+  --pw-ocean: #1B4965;
+  --pw-ocean-dark: #0B2545;
+  --pw-sky: #5FA8D3;
+  --pw-foam: #BEE9E8;
+  --pw-coral: #FF6B35;
+  --pw-coral-hover: #E85D2C;
+  --pw-sand: #FFF8F0;
+  --pw-light: #F0F9FF;
+  --pw-dark: #0F172A;
+  --pw-text: #1E293B;
+  --pw-muted: #64748B;
   --background: #ffffff;
-  --foreground: #0F2B46;
+  --foreground: var(--pw-text);
 }
 
 @theme inline {
@@ -20,4 +31,91 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes wave-drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-wave-drift {
+  animation: wave-drift 12s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--pw-coral) 0%, #FF8C5A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 200%;
+  height: 80px;
+}
+
+.product-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(27, 73, 101, 0.15);
+}
+
+.btn-coral {
+  background: linear-gradient(135deg, var(--pw-coral) 0%, #FF8C5A 50%, var(--pw-coral) 100%);
+  background-size: 200% 100%;
+  transition: background-position 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-coral:hover {
+  background-position: 100% 0;
+  box-shadow: 0 8px 24px -4px rgba(255, 107, 53, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-ocean {
+  background: linear-gradient(135deg, var(--pw-ocean) 0%, #245B7A 100%);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-ocean:hover {
+  box-shadow: 0 8px 24px -4px rgba(27, 73, 101, 0.4);
+  transform: translateY(-1px);
 }

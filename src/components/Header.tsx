@@ -8,41 +8,45 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100/80">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <Logo className="h-8 w-auto" />
+          <Logo className="h-9 w-auto" />
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/#produits"
-            className="text-sm font-medium text-gray-600 hover:text-[#0F2B46] transition-colors"
+            className="text-sm font-medium text-gray-600 hover:text-[#1B4965] transition-colors"
           >
-            Produits
+            Gilets de sauvetage
           </Link>
           <Link
-            href="/#fonctionnalites"
-            className="text-sm font-medium text-gray-600 hover:text-[#0F2B46] transition-colors"
+            href="/#guide-tailles"
+            className="text-sm font-medium text-gray-600 hover:text-[#1B4965] transition-colors"
           >
-            Fonctionnalités
+            Guide des tailles
+          </Link>
+          <Link
+            href="/#pourquoi"
+            className="text-sm font-medium text-gray-600 hover:text-[#1B4965] transition-colors"
+          >
+            Pourquoi PawlyDog
           </Link>
           <Link
             href="/#faq"
-            className="text-sm font-medium text-gray-600 hover:text-[#0F2B46] transition-colors"
+            className="text-sm font-medium text-gray-600 hover:text-[#1B4965] transition-colors"
           >
             FAQ
           </Link>
           <Link
             href="/#produits"
-            className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-[#00C853] hover:bg-[#00B848] rounded-full transition-colors shadow-sm"
+            className="btn-coral inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white rounded-full"
           >
-            Voir les outils
+            Voir nos gilets
           </Link>
         </div>
 
-        {/* Mobile menu button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2 text-gray-600"
@@ -73,7 +77,6 @@ export function Header() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 px-4 pb-4">
           <div className="flex flex-col gap-3">
@@ -82,14 +85,21 @@ export function Header() {
               onClick={() => setMenuOpen(false)}
               className="text-sm font-medium text-gray-600 py-2"
             >
-              Produits
+              Gilets de sauvetage
             </Link>
             <Link
-              href="/#fonctionnalites"
+              href="/#guide-tailles"
               onClick={() => setMenuOpen(false)}
               className="text-sm font-medium text-gray-600 py-2"
             >
-              Fonctionnalités
+              Guide des tailles
+            </Link>
+            <Link
+              href="/#pourquoi"
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-medium text-gray-600 py-2"
+            >
+              Pourquoi PawlyDog
             </Link>
             <Link
               href="/#faq"
@@ -101,9 +111,9 @@ export function Header() {
             <Link
               href="/#produits"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-[#00C853] rounded-full"
+              className="btn-coral inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white rounded-full"
             >
-              Voir les outils
+              Voir nos gilets
             </Link>
           </div>
         </div>

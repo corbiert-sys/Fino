@@ -1,22 +1,23 @@
 import Link from "next/link";
 import { type Product, formatPrice } from "@/lib/products";
+import { LifeJacketIllustration } from "./LifeJacketIllustration";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
     <div
-      className={`relative bg-white rounded-2xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col ${
+      className={`product-card-hover relative bg-white rounded-2xl border flex flex-col ${
         product.popular
-          ? "border-[#00C853] shadow-lg ring-1 ring-[#00C853]/20"
+          ? "border-[#FF6B35] shadow-lg ring-1 ring-[#FF6B35]/20"
           : "border-gray-200 shadow-sm"
       }`}
     >
       {product.badge && (
-        <div className="absolute -top-3 left-6">
+        <div className="absolute -top-3 left-6 z-10">
           <span
             className={`inline-block px-3 py-1 text-xs font-bold rounded-full ${
               product.popular
-                ? "bg-[#00C853] text-white"
-                : "bg-[#0F2B46] text-white"
+                ? "bg-[#FF6B35] text-white"
+                : "bg-[#1B4965] text-white"
             }`}
           >
             {product.badge}
@@ -24,20 +25,39 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
       )}
 
+      <div className="p-6 flex items-center justify-center bg-gradient-to-br from-[#F0F9FF] to-[#E0F2FE] rounded-t-2xl">
+        <LifeJacketIllustration
+          color={product.color}
+          variant={product.id === "pack-aventure" ? "pack" : "jacket"}
+          className="w-40 h-40"
+        />
+      </div>
+
       <div className="p-6 sm:p-8 flex flex-col flex-1">
-        <div className="text-4xl mb-4">{product.icon}</div>
-        <h3 className="text-lg font-bold text-[#0F2B46] mb-2">
+        <h3 className="text-lg font-bold text-[#1B4965] mb-2">
           {product.name}
         </h3>
-        <p className="text-sm text-gray-500 mb-6 flex-1">
+        <p className="text-sm text-gray-500 mb-4 flex-1 line-clamp-2">
           {product.description}
         </p>
 
-        <div className="mb-6">
-          <span className="text-3xl font-extrabold text-[#0F2B46]">
+        {product.availableSizes.length > 0 && (
+          <div className="flex gap-1.5 mb-4 flex-wrap">
+            {product.availableSizes.map((size) => (
+              <span
+                key={size}
+                className="px-2 py-0.5 text-xs font-medium bg-[#F0F9FF] text-[#1B4965] rounded"
+              >
+                {size}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="mb-5">
+          <span className="text-3xl font-extrabold text-[#1B4965]">
             {formatPrice(product.price)}
           </span>
-          <span className="text-sm text-gray-400 ml-1">TTC</span>
           {product.originalPrice && (
             <span className="ml-2 text-sm text-gray-400 line-through">
               {formatPrice(product.originalPrice)}
@@ -45,14 +65,14 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </div>
 
-        <ul className="space-y-2 mb-6">
-          {product.features.slice(0, 4).map((f) => (
+        <ul className="space-y-1.5 mb-6">
+          {product.features.slice(0, 3).map((f) => (
             <li
               key={f}
               className="flex items-start gap-2 text-sm text-gray-600"
             >
               <svg
-                className="w-4 h-4 text-[#00C853] mt-0.5 shrink-0"
+                className="w-4 h-4 text-[#FF6B35] mt-0.5 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -64,7 +84,7 @@ export function ProductCard({ product }: { product: Product }) {
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              {f}
+              <span className="line-clamp-1">{f}</span>
             </li>
           ))}
         </ul>
@@ -73,11 +93,11 @@ export function ProductCard({ product }: { product: Product }) {
           href={`/produits/${product.id}`}
           className={`w-full text-center py-3 px-6 rounded-full text-sm font-semibold transition-all ${
             product.popular
-              ? "bg-[#00C853] hover:bg-[#00B848] text-white shadow-md shadow-[#00C853]/25"
-              : "bg-[#0F2B46] hover:bg-[#1a3d5c] text-white"
+              ? "btn-coral text-white"
+              : "btn-ocean text-white"
           }`}
         >
-          Découvrir
+          Decouvrir
         </Link>
       </div>
     </div>
